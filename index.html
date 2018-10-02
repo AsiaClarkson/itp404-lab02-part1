@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Client-side Templating</title>
+</head>
+<body>
+  <div id='restaurants-today'>
+<template id='food-temp'>
+  {{#each restaurant}}
+  <h1>{{name}}</h1>
+  <h2>{{location}}</h2>
+  <a href='{{yelpPage}}' target="_blank" >Check Us Out On Yelp!</a><br>
+  Owners:
+  {{#each ownedBy}}
+  <ul>
+    <li>{{[]}}</li>
+  </ul>
+  {{/each}}
+  {{#if acceptsApplePay}}
+      <img src='http://cdn.osxdaily.com/wp-content/uploads/2015/03/apple-logo.gif'alt='apple' width='25px'>
+      {{else}}
+      <p>No Apple Pay</p>
+      {{/if}}
+  {{/each}}
+</template>
+</div>
+<script src="jquery-3.3.1.js"></script>
+<script src="handlebars-v4.0.11.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
